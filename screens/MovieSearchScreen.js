@@ -17,14 +17,27 @@ export default class MovieSearchScreen extends React.Component {
 		};
 	};
 
+	onSearch = (searchedText) => {
+		return fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${searchedText}`)
+			.then((response) => response.json())
+			.then((responseJson) => {
+				console.log(responseJson);
+				const results = responseJson.Search;
+				this.props.navigation.push('MoviesList', { results, searchedText });
 
+			})
+			.catch((error) => {
+				console.error(error);
+			});
+
+	}
 
 	render() {
 		return (
 			<View style={Styles.container}>
 				<Text>Hello!</Text>
 				<SearchBox
-					navigation={this.props.navigation}
+					onSearch={this.onSearch}
 				/>
 			</View>
 		);

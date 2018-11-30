@@ -20,12 +20,7 @@ export default class SearchBox extends React.Component {
 				/>
 				<Button
 					title="Search"
-					onPress={() => {
-						console.log(this.props, this.state)
-						this.props.navigation.push('MoviesList',
-							{ text: this.state.text }
-						)
-					}}
+					onPress={() => { this.props.onSearch(this.state.tet) }}
 				/>
 			</View>
 		);

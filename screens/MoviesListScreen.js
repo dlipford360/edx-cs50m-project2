@@ -20,14 +20,15 @@ export default class MoviesListScreen extends React.Component {
 
 
 	render() {
-		const searchedText = this.props.navigation.getParam('text');
+		const searchedText = this.props.navigation.getParam('searchedText');
+		const results = this.props.navigation.getParam('results')
 		return (
 			<View style={Styles.container}>
 				<Text>
 					Movies for <Text style={Styles.searchedText}>{searchedText}</Text>
 				</Text>
 				<SearchResults
-					searchedText={searchedText}
+					results={results}
 				/>
 			</View>
 		);
