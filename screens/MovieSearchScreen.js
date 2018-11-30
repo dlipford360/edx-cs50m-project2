@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, View, Text } from 'react-native';
 import Styles from '../styles'
+import SearchBox from './components/SearchBox';
 
 export default class MovieSearchScreen extends React.Component {
 	static navigationOptions = ({ navigation }) => {
@@ -22,9 +23,8 @@ export default class MovieSearchScreen extends React.Component {
 		return (
 			<View style={Styles.container}>
 				<Text>Hello!</Text>
-				<Button
-					title="Go to movies list"
-					onPress={() => { this.props.navigation.push('MoviesList'); }}
+				<SearchBox
+					navigation={this.props.navigation}
 				/>
 			</View>
 		);

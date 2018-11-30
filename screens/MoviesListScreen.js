@@ -1,6 +1,7 @@
 import React from 'react';
-import { Button, View, StyleSheet } from 'react-native';
+import { Button, View, Text } from 'react-native';
 import Styles from '../styles'
+import SearchResults from './components/SearchResults';
 
 export default class MoviesListScreen extends React.Component {
 	static navigationOptions = ({ navigation }) => {
@@ -19,11 +20,14 @@ export default class MoviesListScreen extends React.Component {
 
 
 	render() {
+		const searchedText = this.props.navigation.getParam('text');
 		return (
 			<View style={Styles.container}>
-				<Button
-					title="Go to movie details"
-					onPress={() => { this.props.navigation.push('MovieDetails'); }}
+				<Text>
+					Movies for <Text style={Styles.searchedText}>{searchedText}</Text>
+				</Text>
+				<SearchResults
+					searchedText={searchedText}
 				/>
 			</View>
 		);
