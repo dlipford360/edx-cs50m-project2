@@ -16,7 +16,9 @@ export default class MoviesListScreen extends React.Component {
 			// ),
 		};
 	};
-
+	goToMovieDetails = (movie) => {
+		this.props.navigation.push('MovieDetails', { movie })
+	}
 
 
 	render() {
@@ -29,6 +31,7 @@ export default class MoviesListScreen extends React.Component {
 				</Text>
 				<SearchResults
 					results={results}
+					goToMovieDetails={this.goToMovieDetails}
 				/>
 			</View>
 		);

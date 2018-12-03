@@ -1,16 +1,16 @@
 import React from 'react';
 import { Button, View, Text } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
 import Styles from '../styles'
+import { Ionicons } from '@expo/vector-icons';
 
-export default class MovieDetailsScreen extends React.Component {
+export default class MoviePosterScreen extends React.Component {
 	static navigationOptions = ({ navigation }) => {
 		return {
-			headerTitle: 'Movie details',
+			headerTitle: 'Movie poster',
 			tabBarIcon: ({ focused, tintColor }) => {
 				return (
 					<Ionicons
-						name='md-filing' //{`md-film${focused ? "" : "-outline"}`}
+						name='md-film'
 						color={tintColor}
 						size={25}
 					/>)
@@ -23,7 +23,7 @@ export default class MovieDetailsScreen extends React.Component {
 	render() {
 		return (
 			<View style={Styles.container}>
-				<Text>This is the movie details</Text>
+				<Text>This is the movie poster</Text>
 			</View>
 		);
 	}

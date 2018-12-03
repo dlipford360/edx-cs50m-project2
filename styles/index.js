@@ -15,5 +15,6 @@ export default StyleSheet.create({
 	},
 	searchedText: {
 		fontStyle: "italic"
-	}
+	},
+	row: { padding: 20 },
 });

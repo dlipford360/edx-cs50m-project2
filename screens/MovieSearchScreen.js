@@ -18,6 +18,7 @@ export default class MovieSearchScreen extends React.Component {
 	};
 
 	onSearch = (searchedText) => {
+		console.log(searchedText)
 		return fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${searchedText}`)
 			.then((response) => response.json())
 			.then((responseJson) => {
@@ -39,7 +40,7 @@ export default class MovieSearchScreen extends React.Component {
 				<SearchBox
 					onSearch={this.onSearch}
 				/>
-			</View>
+			</View >
 		);
 	}
 }

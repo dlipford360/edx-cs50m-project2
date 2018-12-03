@@ -1,12 +1,24 @@
 import {
-	createStackNavigator, createAppContainer
+	createStackNavigator,
+	createBottomTabNavigator
 } from "react-navigation";
-import { MoviesListScreen, MovieDetailsScreen, MovieSearchScreen } from '../screens'
+import {
+	MoviesListScreen,
+	MovieDetailsScreen,
+	MovieSearchScreen,
+	MoviePosterScreen,
+} from '../screens'
+
+const MovieTabs = createBottomTabNavigator(
+	{
+		Poster: MoviePosterScreen,
+		Details: MovieDetailsScreen
+	});
 
 const AppNavigator = createStackNavigator(
 	{
 		MoviesList: MoviesListScreen,
-		MovieDetails: MovieDetailsScreen,
+		MovieDetails: MovieTabs,
 		MovieSearch: MovieSearchScreen,
 
 	},
@@ -15,5 +27,7 @@ const AppNavigator = createStackNavigator(
 
 	}
 );
+
+
 
 export default AppNavigator;

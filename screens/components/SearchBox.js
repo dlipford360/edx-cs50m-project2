@@ -20,7 +20,7 @@ export default class SearchBox extends React.Component {
 				/>
 				<Button
 					title="Search"
-					onPress={() => { this.props.onSearch(this.state.tet) }}
+					onPress={() => { this.props.onSearch(this.state.text) }}
 				/>
 			</View>
 		);
