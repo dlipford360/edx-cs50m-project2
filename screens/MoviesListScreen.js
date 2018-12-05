@@ -17,7 +17,16 @@ export default class MoviesListScreen extends React.Component {
 		};
 	};
 	goToMovieDetails = (movie) => {
-		this.props.navigation.push('MovieDetails', { movie })
+		http://www.omdbapi.com/?i=tt0109686
+		return fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&i=${movie.imdbID}`)
+			.then((response) => response.json())
+			.then((responseJson) => {
+				console.log(responseJson);
+				this.props.navigation.push('MovieDetails', { movie: responseJson });
+			})
+			.catch((error) => {
+				console.error(error);
+			});
 	}
 
 

@@ -36,7 +36,6 @@ export default class MovieSearchScreen extends React.Component {
 	render() {
 		return (
 			<View style={Styles.container}>
-				<Text>Hello!</Text>
 				<SearchBox
 					onSearch={this.onSearch}
 				/>

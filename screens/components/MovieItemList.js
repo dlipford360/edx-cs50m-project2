@@ -9,8 +9,16 @@ export default class MovieItemList extends React.Component {
 		return (
 			<TouchableOpacity
 				style={Styles.row}
-				onPress={() => this.props.goToMovieDetails(this.props.movie)}>
-				<Text>{this.props.movie.Title}</Text>
+				onPress={
+					() => this.props.goToMovieDetails(this.props.movie)
+				}
+			>
+				<View style={Styles.MovieItemListRow}>
+					<Text>{this.props.movie.Title}</Text>
+					<Text style={Styles.MovieItemListYear}>
+						({this.props.movie.Year})
+					</Text>
+				</View>
 			</TouchableOpacity>
 		);
 	}

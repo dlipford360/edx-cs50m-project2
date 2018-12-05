@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, View, Text } from 'react-native';
+import { View, Image } from 'react-native';
 import Styles from '../styles'
 import { Ionicons } from '@expo/vector-icons';
 
@@ -21,10 +21,14 @@ export default class MoviePosterScreen extends React.Component {
 
 
 	render() {
+		const { Poster: poster } = this.props.navigation.getParam('movie');
+		console.log(poster);
 		return (
-			<View style={Styles.container}>
-				<Text>This is the movie poster</Text>
-			</View>
+			<Image
+				style={{ flex: 1, height: undefined, width: undefined }}
+				resizeMode={'contain'}
+				source={{ uri: poster }}
+			/>
 		);
 	}
 }
